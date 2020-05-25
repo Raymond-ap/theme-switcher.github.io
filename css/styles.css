@@ -1,0 +1,260 @@
+
+/*
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+*/
+
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* global */
+:root {
+    --LimeGreen: hsl(163, 72%, 41%);
+    --BrightRed: hsl(356, 69%, 56%);
+    --Facebook: hsl(208, 92%, 53%);
+    --Twitter: hsl(203, 89%, 53%);
+    --Instagram: hsl(329, 70%, 58%);
+    --YouTube: hsl(348, 97%, 39%);
+    --ToggleLight: hsl(230, 22%, 74%);
+    --bodylight: hsl(0, 0%, 100%);
+    --lightcard: hsl(227, 47%, 96%);
+}
+
+body {
+    margin: 0 auto;
+    background: var(--bodylight);
+    transition: all .5s linear;
+}
+
+.dark {
+    background: hsl(232, 19%, 15%);
+    transition: all .5s ease-in;
+}
+
+/* header */
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3rem;
+    text-transform: capitalize;
+    transition: all .5s linear;
+}
+
+.header .toogle {
+    display: flex;
+    flex-direction: column;
+    transition: all .5s linear;
+    padding: 0rem;
+}
+
+.header h4 {
+    color: var(--ToggleLight);
+    transition: all .5s linear;
+}
+
+.arrow-down {
+    color: hsl(348, 97%, 39%) !important; 
+}
+
+/*toogle*/
+
+.header .toogle .bg{
+    position: relative;
+    height: 1.9rem;
+    width: 60%;
+    border-radius: 2rem;
+    background: var(--ToggleLight) !important;
+    transition: all .5s linear;
+    cursor: pointer;
+}
+
+.bg .light {
+    position: absolute;
+    height: 1.3rem;
+    width: 50%;
+    border-radius: 2rem;
+    transition: all .5s linear;
+    background: var(--lightcard) !important;
+    margin: .3rem;
+    
+}
+
+
+.active .light {
+    right: 0;
+    transition: all .5s linear;
+    background: var(--bodylight) !important;
+}
+
+.toogle-backgroud {
+    background: var(--LimeGreen) !important;
+}
+
+.headerColor {
+    color: hsl(0, 0%, 100%) !important;
+}
+
+.cardColor {
+    background: hsl(228, 28%, 20%) !important;
+}
+
+/*dashboard*/
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.center .containers {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 2rem;
+}
+
+.center .containers .card {
+    background: hsl(225, 100%, 98%);
+    padding: 2rem 1.5rem;
+}
+
+.card .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .logo p {
+    padding: 0rem .8rem;
+}
+
+.card h1 {
+    font-size: 4rem;
+    padding-top: 1rem;
+}
+
+.card h4 {
+    color: var(--ToggleLight);
+    font-size: 1.5rem;
+    letter-spacing: .5rem;
+}
+
+.card h5 {
+    padding-top: 1rem;
+    color: var(--LimeGreen);
+    font-size: 1rem;
+}
+
+.card1 {
+    border-top: 5px solid var(--Facebook);
+}
+
+.card2 {
+    border-top: 5px solid var(--Twitter);
+}
+
+.card3 {
+    border-top: 5px solid var(--Instagram);
+}
+
+.card4 {
+    border-top: 5px solid var(--YouTube);
+}
+
+.card4 h5 {
+    color: var(--YouTube);
+}
+
+.center .containers .card:hover, 
+.items .box:hover {
+    background:  var(--lightcard);
+    cursor: pointer;
+    transition: all .5s linear;
+}
+
+/*quary for mobile*/
+@media screen and (max-width: 990px) {
+    .center .containers {
+        grid-template-columns: repeat(3,1fr);
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+@media screen and (max-width: 770px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .center .containers {
+        grid-template-columns: 1fr;
+    }
+
+    .header .toogle {
+        flex-direction: initial;
+        padding-top: 1rem;
+    }
+
+}
+
+.overview {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.overview .title h1{
+    color: var(--ToggleLight);
+    font-size: 2rem;
+}
+
+.items .box {
+    padding: 1.5rem 1rem;
+    background: var(--lightcard);
+}
+
+
+.items .box h1 {
+    font-size: 1.7rem;
+}
+
+
+.items .box > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+}
+
+.items .box > div h3, .items .box h1 {
+    padding-right: 5rem;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+@media screen and (max-width: 770px) {
+    
+    .items {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .items .box {
+        padding: 1rem 0rem;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .items {
+        grid-template-columns: 1fr;
+    }
+}
